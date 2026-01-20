@@ -1,0 +1,69 @@
+[config]
+type = "catalog"
+chartbook_format_version = "0.0.3"
+
+[site]
+title = "ChartBook Catalog"
+author = "Jeremy Bejarano"
+copyright = "2025"
+logo_path = "./logo.png"
+favicon_path = ""
+
+[pipelines]
+
+[pipelines.basis_tips_treas]
+path_to_pipeline = "../basis_tips_treas"
+
+[pipelines.basis_treas_sf]
+path_to_pipeline = "../basis_treas_sf"
+
+[pipelines.basis_treas_swap]
+path_to_pipeline = "../basis_treas_swap"
+
+[pipelines.cds_bond_basis]
+path_to_pipeline = "../cds_bond_basis"
+
+[pipelines.cds_returns]
+path_to_pipeline = "../cds_returns"
+
+[pipelines.cip]
+path_to_pipeline = "../cip"
+
+[pipelines.commodities]
+path_to_pipeline = "../commodities"
+
+[pipelines.corp_bond_returns]
+path_to_pipeline = "../corp_bond_returns"
+
+[pipelines.crsp_treasury]
+path_to_pipeline = "../crsp_treasury"
+
+[pipelines.fed_yield_curve]
+path_to_pipeline = "../fed_yield_curve"
+
+[pipelines.foreign_exchange]
+path_to_pipeline = "../foreign_exchange"
+
+[pipelines.he_kelly_manela]
+path_to_pipeline = "../he_kelly_manela"
+
+[pipelines.ken_french_data_library]
+path_to_pipeline = "../ken_french_data_library"
+
+[pipelines.nyu_call_report]
+path_to_pipeline = "../nyu_call_report"
+
+[pipelines.options]
+path_to_pipeline = "../options"
+
+[pipelines.sovereign_bonds]
+path_to_pipeline = "../sovereign_bonds"
+
+[pipelines.us_treasury_returns]
+path_to_pipeline = "../us_treasury_returns"
+
+[pipelines.wrds_bank_premium]
+path_to_pipeline = "../wrds_bank_premium"
+
+[pipelines.wrds_crsp_compustat]
+path_to_pipeline = "../wrds_crsp_compustat"
