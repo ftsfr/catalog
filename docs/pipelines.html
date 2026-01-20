@@ -1,0 +1,1202 @@
+
+    <!DOCTYPE html>
+
+
+    <html
+        lang="en"  data-content_root="./" >
+        
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pipelines 🔌 &#8212; ChartBook Catalog</title>
+        
+        
+        
+        <script data-cfasync="false">
+            document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+            document.documentElement.dataset.theme = localStorage.getItem("site") || "";
+        </script>
+        
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=a417975a" />
+        
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=b9472d72"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pipelines';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/chartbook-custom.js?v=c152eb6c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Diagnostics" href="diagnostics.html" />
+    <link rel="prev" title="Dataframe: wrds_crsp_compustat:ftsfr_CRSP_monthly_stock_retx - ftsfr_CRSP_monthly_stock_retx" href="dataframes/wrds_crsp_compustat/ftsfr_CRSP_monthly_stock_retx.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="docsearch:language" content="en" />
+        <meta name="docbuild:last-update" content="Jan 20, 2026, 6:57:29 PM" />   
+  </head>
+        
+        
+    
+        <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%"
+            data-default-mode="">
+    
+            
+            
+            <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+            
+            <div id="pst-scroll-pixel-helper"></div>
+            
+            <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+                <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    
+            
+            <input type="checkbox" class="sidebar-toggle" id="pst-primary-sidebar-checkbox" />
+            <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+            
+            <input type="checkbox" class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" />
+            <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+            
+            <div class="search-button__wrapper">
+                <div class="search-button__overlay"></div>
+                <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+            </div>
+    
+            <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+    
+            
+            <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="ChartBook Catalog - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="ChartBook Catalog - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="charts.html">
+    Charts 📈
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataframes.html">
+    Dataframes 📊
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Pipelines 🔌
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="diagnostics.html">
+    Diagnostics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+            </header>
+            
+    
+            <div class="bd-container">
+                <div class="bd-container__inner bd-page-width">
+                    
+                    
+                    
+                    <div class="bd-sidebar-primary bd-sidebar">
+                        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="charts.html">
+    Charts 📈
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataframes.html">
+    Dataframes 📊
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Pipelines 🔌
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="diagnostics.html">
+    Diagnostics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+                    </div>
+                    
+                    <main id="main-content" class="bd-main" role="main">
+                        
+                        
+                        <div class="bd-content">
+                            <div class="bd-article-container">
+                                
+                                <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Pipelines 🔌</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+
+                                </div>
+                                
+                                
+                                
+                                
+                                
+<div id="searchbox"></div>
+                                <article class="bd-article">
+                                     <section class="tex2jax_ignore mathjax_ignore" id="pipelines">
+<h1>Pipelines 🔌<a class="headerlink" href="#pipelines" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="tips-treasury-basis">
+<h2>TIPS-Treasury Basis<a class="headerlink" href="#tips-treasury-basis" title="Link to this heading">#</a></h2>
+<p>TIPS-Treasury arbitrage spread measuring relative value between TIPS and nominal Treasuries</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>TIPS-Treasury Basis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/basis_tips_treas_README.md"><span class="xref myst">basis_tips_treas</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/basis_tips_treas">ftsfr/basis_tips_treas</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/basis_tips_treas/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 22:17:19</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/basis_tips_treas/ftsfr_tips_treasury_basis.html"><span class="std std-doc">basis_tips_treas:ftsfr_tips_treasury_basis</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="treasury-secured-financing-basis">
+<h2>Treasury-Secured Financing Basis<a class="headerlink" href="#treasury-secured-financing-basis" title="Link to this heading">#</a></h2>
+<p>Treasury-SF basis measuring the spread between Treasury yields and SOFR-based secured financing rates</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>Treasury-Secured Financing Basis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/basis_treas_sf_README.md"><span class="xref myst">basis_treas_sf</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/basis_treas_sf">ftsfr/basis_treas_sf</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/basis_treas_sf/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 22:45:40</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/basis_treas_sf/ftsfr_treasury_sf_basis.html"><span class="std std-doc">basis_treas_sf:ftsfr_treasury_sf_basis</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="treasury-swap-arbitrage-spreads">
+<h2>Treasury-Swap Arbitrage Spreads<a class="headerlink" href="#treasury-swap-arbitrage-spreads" title="Link to this heading">#</a></h2>
+<p>Treasury-Swap basis measuring arbitrage opportunities between Treasury yields and swap rates</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>Treasury-Swap Arbitrage Spreads</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/basis_treas_swap_README.md"><span class="xref myst">basis_treas_swap</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/basis_treas_swap">ftsfr/basis_treas_swap</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/basis_treas_swap/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 22:44:05</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/basis_treas_swap/ftsfr_treasury_swap_basis.html"><span class="std std-doc">basis_treas_swap:ftsfr_treasury_swap_basis</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="cds-bond-basis">
+<h2>CDS-Bond Basis<a class="headerlink" href="#cds-bond-basis" title="Link to this heading">#</a></h2>
+<p>CDS-Bond basis measuring implied arbitrage returns from the CDS and corporate bond markets</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>CDS-Bond Basis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/cds_bond_basis_README.md"><span class="xref myst">cds_bond_basis</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano, Alex Wang, Kausthub Kesheva, Vincent Xu</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/cds_bond_basis">ftsfr/cds_bond_basis</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/cds_bond_basis/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 23:28:28</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/cds_bond_basis/ftsfr_cds_bond_basis_aggregated.html"><span class="std std-doc">cds_bond_basis:ftsfr_cds_bond_basis_aggregated</span></a><br>  <a class="reference internal" href="dataframes/cds_bond_basis/ftsfr_cds_bond_basis_non_aggregated.html"><span class="std std-doc">cds_bond_basis:ftsfr_cds_bond_basis_non_aggregated</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="cds-returns">
+<h2>CDS Returns<a class="headerlink" href="#cds-returns" title="Link to this heading">#</a></h2>
+<p>Monthly CDS portfolio returns following He, Kelly, and Manela (2017) methodology</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>CDS Returns</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/cds_returns_README.md"><span class="xref myst">cds_returns</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano, Kausthub Kesheva</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/cds_returns">ftsfr/cds_returns</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/cds_returns/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 22:36:24</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/cds_returns/ftsfr_cds_portfolio_returns.html"><span class="std std-doc">cds_returns:ftsfr_cds_portfolio_returns</span></a><br>  <a class="reference internal" href="dataframes/cds_returns/ftsfr_cds_contract_returns.html"><span class="std std-doc">cds_returns:ftsfr_cds_contract_returns</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="covered-interest-parity-deviations">
+<h2>Covered Interest Parity Deviations<a class="headerlink" href="#covered-interest-parity-deviations" title="Link to this heading">#</a></h2>
+<p>CIP deviations measuring arbitrage opportunities in currency markets</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>Covered Interest Parity Deviations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/cip_README.md"><span class="xref myst">cip</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano, Kunj Mehta</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/cip">ftsfr/cip</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/cip/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 22:14:58</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/cip/ftsfr_cip_spreads.html"><span class="std std-doc">cip:ftsfr_cip_spreads</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="commodities">
+<h2>Commodities<a class="headerlink" href="#commodities" title="Link to this heading">#</a></h2>
+<p>Commodity futures returns and basis data from Bloomberg and WRDS</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>Commodities</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/commodities_README.md"><span class="xref myst">commodities</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/commodities">ftsfr/commodities</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/commodities/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-17 09:02:46</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/commodities/ftsfr_commodities_returns.html"><span class="std std-doc">commodities:ftsfr_commodities_returns</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="corporate-bond-returns">
+<h2>Corporate Bond Returns<a class="headerlink" href="#corporate-bond-returns" title="Link to this heading">#</a></h2>
+<p>Corporate bond returns from <a class="reference external" href="http://OpenBondAssetPricing.com">OpenBondAssetPricing.com</a> (TRACE data), including individual bond returns and credit spread-sorted portfolios</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>Corporate Bond Returns</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/corp_bond_returns_README.md"><span class="xref myst">corp_bond_returns</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/corp_bond_returns">ftsfr/corp_bond_returns</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/corp_bond_returns/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 20:11:41</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/corp_bond_returns/ftsfr_corp_bond_returns.html"><span class="std std-doc">corp_bond_returns:ftsfr_corp_bond_returns</span></a><br>  <a class="reference internal" href="dataframes/corp_bond_returns/ftsfr_corp_bond_portfolio_returns.html"><span class="std std-doc">corp_bond_returns:ftsfr_corp_bond_portfolio_returns</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="crsp-treasury">
+<h2>CRSP Treasury<a class="headerlink" href="#crsp-treasury" title="Link to this heading">#</a></h2>
+<p>Treasury Securities Data from CRSP</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>CRSP Treasury</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/crsp_treasury_README.md"><span class="xref myst">crsp_treasury</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/crsp_treasury">ftsfr/crsp_treasury</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/crsp_treasury/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 18:10:38</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/crsp_treasury/crsp_treasury_daily.html"><span class="std std-doc">crsp_treasury:crsp_treasury_daily</span></a><br>  <a class="reference internal" href="dataframes/crsp_treasury/treasury_auctions.html"><span class="std std-doc">crsp_treasury:treasury_auctions</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="federal-reserve-yield-curve">
+<h2>Federal Reserve Yield Curve<a class="headerlink" href="#federal-reserve-yield-curve" title="Link to this heading">#</a></h2>
+<p>Treasury Zero-Coupon Yield Curve from the Federal Reserve</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>Federal Reserve Yield Curve</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/fed_yield_curve_README.md"><span class="xref myst">fed_yield_curve</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/fed_yield_curve">ftsfr/fed_yield_curve</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/fed_yield_curve/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 18:45:25</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/fed_yield_curve/ftsfr_treas_yield_curve_zero_coupon.html"><span class="std std-doc">fed_yield_curve:ftsfr_treas_yield_curve_zero_coupon</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="foreign-exchange-returns">
+<h2>Foreign Exchange Returns<a class="headerlink" href="#foreign-exchange-returns" title="Link to this heading">#</a></h2>
+<p>Daily FX returns for USD invested in foreign currencies via overnight repo markets</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>Foreign Exchange Returns</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/foreign_exchange_README.md"><span class="xref myst">foreign_exchange</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano, Kunj Mehta</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/foreign_exchange">ftsfr/foreign_exchange</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/foreign_exchange/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 22:12:35</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/foreign_exchange/ftsfr_fx_returns.html"><span class="std std-doc">foreign_exchange:ftsfr_fx_returns</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="he-kelly-manela-factors">
+<h2>He-Kelly-Manela Factors<a class="headerlink" href="#he-kelly-manela-factors" title="Link to this heading">#</a></h2>
+<p>Intermediary Capital Risk Factors from He, Kelly, and Manela (2017)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>He-Kelly-Manela Factors</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/he_kelly_manela_README.md"><span class="xref myst">he_kelly_manela</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/he_kelly_manela">ftsfr/he_kelly_manela</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/he_kelly_manela/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 18:40:48</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/he_kelly_manela/ftsfr_he_kelly_manela_factors_monthly.html"><span class="std std-doc">he_kelly_manela:ftsfr_he_kelly_manela_factors_monthly</span></a><br>  <a class="reference internal" href="dataframes/he_kelly_manela/ftsfr_he_kelly_manela_factors_daily.html"><span class="std std-doc">he_kelly_manela:ftsfr_he_kelly_manela_factors_daily</span></a><br>  <a class="reference internal" href="dataframes/he_kelly_manela/ftsfr_he_kelly_manela_all.html"><span class="std std-doc">he_kelly_manela:ftsfr_he_kelly_manela_all</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ken-french-data-library">
+<h2>Ken French Data Library<a class="headerlink" href="#ken-french-data-library" title="Link to this heading">#</a></h2>
+<p>Fama-French 25 Portfolios sorted by Size and various characteristics</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>Ken French Data Library</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/ken_french_data_library_README.md"><span class="xref myst">ken_french_data_library</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/ken_french_data_library">ftsfr/ken_french_data_library</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/ken_french_data_library/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 18:42:56</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/ken_french_data_library/ftsfr_french_portfolios_25_daily_size_and_bm.html"><span class="std std-doc">ken_french_data_library:ftsfr_french_portfolios_25_daily_size_and_bm</span></a><br>  <a class="reference internal" href="dataframes/ken_french_data_library/ftsfr_french_portfolios_25_daily_size_and_op.html"><span class="std std-doc">ken_french_data_library:ftsfr_french_portfolios_25_daily_size_and_op</span></a><br>  <a class="reference internal" href="dataframes/ken_french_data_library/ftsfr_french_portfolios_25_daily_size_and_inv.html"><span class="std std-doc">ken_french_data_library:ftsfr_french_portfolios_25_daily_size_and_inv</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="nyu-call-report">
+<h2>NYU Call Report<a class="headerlink" href="#nyu-call-report" title="Link to this heading">#</a></h2>
+<p>Bank-level leverage and liquidity metrics from regulatory call reports</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>NYU Call Report</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/nyu_call_report_README.md"><span class="xref myst">nyu_call_report</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/nyu_call_report">ftsfr/nyu_call_report</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/nyu_call_report/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 19:39:13</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/nyu_call_report/ftsfr_nyu_call_report_leverage.html"><span class="std std-doc">nyu_call_report:ftsfr_nyu_call_report_leverage</span></a><br>  <a class="reference internal" href="dataframes/nyu_call_report/ftsfr_nyu_call_report_holding_company_leverage.html"><span class="std std-doc">nyu_call_report:ftsfr_nyu_call_report_holding_company_leverage</span></a><br>  <a class="reference internal" href="dataframes/nyu_call_report/ftsfr_nyu_call_report_cash_liquidity.html"><span class="std std-doc">nyu_call_report:ftsfr_nyu_call_report_cash_liquidity</span></a><br>  <a class="reference internal" href="dataframes/nyu_call_report/ftsfr_nyu_call_report_holding_company_cash_liquidity.html"><span class="std std-doc">nyu_call_report:ftsfr_nyu_call_report_holding_company_cash_liquidity</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="spx-options">
+<h2>SPX Options<a class="headerlink" href="#spx-options" title="Link to this heading">#</a></h2>
+<p>Leverage-adjusted SPX option portfolio returns following CJS (2013) and HKM (2017)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>SPX Options</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/options_README.md"><span class="xref myst">options</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano, Tobias Rodriguez del Pozo</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/options">ftsfr/options</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/options/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 20:48:56</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/options/ftsfr_hkm_option_returns.html"><span class="std std-doc">options:ftsfr_hkm_option_returns</span></a><br>  <a class="reference internal" href="dataframes/options/ftsfr_cjs_option_returns.html"><span class="std std-doc">options:ftsfr_cjs_option_returns</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="jp-morgan-embi-sovereign-bond-returns">
+<h2>JP Morgan EMBI Sovereign Bond Returns<a class="headerlink" href="#jp-morgan-embi-sovereign-bond-returns" title="Link to this heading">#</a></h2>
+<p>Emerging market sovereign bond returns from JP Morgan EMBI indices</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>JP Morgan EMBI Sovereign Bond Returns</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/sovereign_bonds_README.md"><span class="xref myst">sovereign_bonds</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/sovereign_bonds">ftsfr/sovereign_bonds</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/sovereign_bonds/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-16 22:47:23</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/sovereign_bonds/ftsfr_embi_returns.html"><span class="std std-doc">sovereign_bonds:ftsfr_embi_returns</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="us-treasury-returns">
+<h2>US Treasury Returns<a class="headerlink" href="#us-treasury-returns" title="Link to this heading">#</a></h2>
+<p>Treasury bond returns from CRSP, including individual bond returns, maturity-sorted portfolios, and auction statistics</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>US Treasury Returns</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/us_treasury_returns_README.md"><span class="xref myst">us_treasury_returns</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/us_treasury_returns">ftsfr/us_treasury_returns</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/us_treasury_returns/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-17 09:00:02</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/us_treasury_returns/ftsfr_treas_bond_returns.html"><span class="std std-doc">us_treasury_returns:ftsfr_treas_bond_returns</span></a><br>  <a class="reference internal" href="dataframes/us_treasury_returns/ftsfr_treas_bond_portfolio_returns.html"><span class="std std-doc">us_treasury_returns:ftsfr_treas_bond_portfolio_returns</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="wrds-bank-regulatory-premium">
+<h2>WRDS Bank Regulatory Premium<a class="headerlink" href="#wrds-bank-regulatory-premium" title="Link to this heading">#</a></h2>
+<p>WRDS Bank Regulatory Premium database tables including call reports, CRSP linkage, and LEI data</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>WRDS Bank Regulatory Premium</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/wrds_bank_premium_README.md"><span class="xref myst">wrds_bank_premium</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/wrds_bank_premium">ftsfr/wrds_bank_premium</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/wrds_bank_premium/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-17 00:05:52</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/wrds_bank_premium/ftsfr_bank_total_assets.html"><span class="std std-doc">wrds_bank_premium:ftsfr_bank_total_assets</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="wrds-crsp-compustat">
+<h2>WRDS CRSP-Compustat<a class="headerlink" href="#wrds-crsp-compustat" title="Link to this heading">#</a></h2>
+<p>CRSP stock returns and Fama-French factor replication from WRDS CRSP and Compustat databases</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>WRDS CRSP-Compustat</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="#./pipelines/wrds_crsp_compustat_README.md"><span class="xref myst">wrds_crsp_compustat</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremy Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremy Bejarano, Tobias Rodriguez del Pozo</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/wrds_crsp_compustat">ftsfr/wrds_crsp_compustat</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/wrds_crsp_compustat/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-01-17 09:06:32</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="dataframes/wrds_crsp_compustat/ftsfr_CRSP_monthly_stock_ret.html"><span class="std std-doc">wrds_crsp_compustat:ftsfr_CRSP_monthly_stock_ret</span></a><br>  <a class="reference internal" href="dataframes/wrds_crsp_compustat/ftsfr_CRSP_monthly_stock_retx.html"><span class="std std-doc">wrds_crsp_compustat:ftsfr_CRSP_monthly_stock_retx</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                                </article>
+                                
+                                
+                                
+                                
+                                
+                                <footer class="prev-next-footer d-print-none">
+                                    
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dataframes/wrds_crsp_compustat/ftsfr_CRSP_monthly_stock_retx.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Dataframe: <code class="docutils literal notranslate"><span class="pre">wrds_crsp_compustat:ftsfr_CRSP_monthly_stock_retx</span></code> - ftsfr_CRSP_monthly_stock_retx</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="diagnostics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Diagnostics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                                </footer>
+                                
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                        <footer class="bd-footer-content">
+                            
+                        </footer>
+                        
+                    </main>
+                </div>
+            </div>
+            
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+            <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Jeremy Bejarano.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+            </footer>
+  </body>
+</html>

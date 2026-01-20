@@ -1,0 +1,1199 @@
+
+    <!DOCTYPE html>
+
+
+    <html
+        lang="en"  data-content_root="../../" >
+        
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Federal Reserve Treasury Yield Curve &#8212; ChartBook Catalog</title>
+        
+        
+        
+        <script data-cfasync="false">
+            document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+            document.documentElement.dataset.theme = localStorage.getItem("site") || "";
+        </script>
+        
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a417975a" />
+        
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=b9472d72"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/fed_yield_curve/summary_fed_yield_curve_ipynb';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/chartbook-custom.js?v=c152eb6c"></script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="docsearch:language" content="en" />
+        <meta name="docbuild:last-update" content="Jan 20, 2026, 6:57:29 PM" />   
+  </head>
+        
+        
+    
+        <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%"
+            data-default-mode="">
+    
+            
+            
+            <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+            
+            <div id="pst-scroll-pixel-helper"></div>
+            
+            <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+                <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    
+            
+            <input type="checkbox" class="sidebar-toggle" id="pst-primary-sidebar-checkbox" />
+            <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+            
+            <input type="checkbox" class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" />
+            <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+            
+            <div class="search-button__wrapper">
+                <div class="search-button__overlay"></div>
+                <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+            </div>
+    
+            <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+    
+            
+            <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="ChartBook Catalog - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="ChartBook Catalog - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../charts.html">
+    Charts 📈
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../dataframes.html">
+    Dataframes 📊
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../pipelines.html">
+    Pipelines 🔌
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../diagnostics.html">
+    Diagnostics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+            </header>
+            
+    
+            <div class="bd-container">
+                <div class="bd-container__inner bd-page-width">
+                    
+                    
+                    
+                    
+                    
+                    <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+                        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../charts.html">
+    Charts 📈
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../dataframes.html">
+    Dataframes 📊
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../pipelines.html">
+    Pipelines 🔌
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../diagnostics.html">
+    Diagnostics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+                    </div>
+                    
+                    <main id="main-content" class="bd-main" role="main">
+                        
+                        
+                        <div class="bd-content">
+                            <div class="bd-article-container">
+                                
+                                <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Federal...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+
+                                </div>
+                                
+                                
+                                
+                                
+                                
+<div id="searchbox"></div>
+                                <article class="bd-article">
+                                     <section class="tex2jax_ignore mathjax_ignore" id="federal-reserve-treasury-yield-curve">
+<h1>Federal Reserve Treasury Yield Curve<a class="headerlink" href="#federal-reserve-treasury-yield-curve" title="Link to this heading">#</a></h1>
+<p>This notebook provides summary statistics and visualizations for the Federal Reserve’s
+Treasury yield curve data based on the Gurkaynak, Sack, and Wright (2007) model.</p>
+<section id="data-source">
+<h2>Data Source<a class="headerlink" href="#data-source" title="Link to this heading">#</a></h2>
+<p>Data is publicly available from the <a class="reference external" href="https://www.federalreserve.gov/data/nominal-yield-curve.htm">Federal Reserve</a>.</p>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
+<p>Gurkaynak, Refet S., Brian Sack, and Jonathan H. Wright. “The US Treasury yield curve: 1961 to the present.”
+Journal of Monetary Economics 54.8 (2007): 2291-2304.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">import</span> <span class="nn">chartbook</span>
+
+<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">chartbook</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_project_root</span><span class="p">()</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;_data&quot;</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-the-dataset">
+<h2>Load the Dataset<a class="headerlink" href="#load-the-dataset" title="Link to this heading">#</a></h2>
+<p>The dataset contains zero-coupon Treasury yields for maturities from 1 to 30 years.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the yield curve data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;ftsfr_treas_yield_curve_zero_coupon.parquet&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataset shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset shape: (376712, 3)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>unique_id</th>
+      <th>ds</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SVENY01</td>
+      <td>1961-06-14</td>
+      <td>2.9825</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SVENY01</td>
+      <td>1961-06-15</td>
+      <td>2.9941</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SVENY01</td>
+      <td>1961-06-16</td>
+      <td>3.0012</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SVENY01</td>
+      <td>1961-06-19</td>
+      <td>2.9949</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SVENY01</td>
+      <td>1961-06-20</td>
+      <td>2.9833</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot to wide format for analysis</span>
+<span class="n">df_wide</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;ds&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;unique_id&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wide format shape: </span><span class="si">{</span><span class="n">df_wide</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tenors: </span><span class="si">{</span><span class="n">df_wide</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wide format shape: (16106, 30)
+Tenors: [&#39;SVENY01&#39;, &#39;SVENY02&#39;, &#39;SVENY03&#39;, &#39;SVENY04&#39;, &#39;SVENY05&#39;, &#39;SVENY06&#39;, &#39;SVENY07&#39;, &#39;SVENY08&#39;, &#39;SVENY09&#39;, &#39;SVENY10&#39;, &#39;SVENY11&#39;, &#39;SVENY12&#39;, &#39;SVENY13&#39;, &#39;SVENY14&#39;, &#39;SVENY15&#39;, &#39;SVENY16&#39;, &#39;SVENY17&#39;, &#39;SVENY18&#39;, &#39;SVENY19&#39;, &#39;SVENY20&#39;, &#39;SVENY21&#39;, &#39;SVENY22&#39;, &#39;SVENY23&#39;, &#39;SVENY24&#39;, &#39;SVENY25&#39;, &#39;SVENY26&#39;, &#39;SVENY27&#39;, &#39;SVENY28&#39;, &#39;SVENY29&#39;, &#39;SVENY30&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-statistics">
+<h2>Summary Statistics<a class="headerlink" href="#summary-statistics" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Summary statistics for each tenor</span>
+<span class="n">summary_stats</span> <span class="o">=</span> <span class="n">df_wide</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+<span class="n">summary_stats</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>unique_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SVENY01</th>
+      <td>16106.0</td>
+      <td>4.809459</td>
+      <td>3.258954</td>
+      <td>0.0554</td>
+      <td>2.303950</td>
+      <td>4.852237</td>
+      <td>6.664082</td>
+      <td>16.4620</td>
+    </tr>
+    <tr>
+      <th>SVENY02</th>
+      <td>16106.0</td>
+      <td>5.002349</td>
+      <td>3.204157</td>
+      <td>0.1020</td>
+      <td>2.628175</td>
+      <td>4.866750</td>
+      <td>6.904200</td>
+      <td>15.9118</td>
+    </tr>
+    <tr>
+      <th>SVENY03</th>
+      <td>16106.0</td>
+      <td>5.162044</td>
+      <td>3.137659</td>
+      <td>0.1272</td>
+      <td>2.867450</td>
+      <td>4.922799</td>
+      <td>7.083700</td>
+      <td>15.5746</td>
+    </tr>
+    <tr>
+      <th>SVENY04</th>
+      <td>16106.0</td>
+      <td>5.298994</td>
+      <td>3.071867</td>
+      <td>0.1685</td>
+      <td>3.068850</td>
+      <td>5.036641</td>
+      <td>7.181158</td>
+      <td>15.3498</td>
+    </tr>
+    <tr>
+      <th>SVENY05</th>
+      <td>16106.0</td>
+      <td>5.418824</td>
+      <td>3.011570</td>
+      <td>0.2218</td>
+      <td>3.345725</td>
+      <td>5.192362</td>
+      <td>7.277300</td>
+      <td>15.1776</td>
+    </tr>
+    <tr>
+      <th>SVENY06</th>
+      <td>16106.0</td>
+      <td>5.524497</td>
+      <td>2.958283</td>
+      <td>0.2806</td>
+      <td>3.548400</td>
+      <td>5.313379</td>
+      <td>7.348475</td>
+      <td>15.0611</td>
+    </tr>
+    <tr>
+      <th>SVENY07</th>
+      <td>16106.0</td>
+      <td>5.617864</td>
+      <td>2.912150</td>
+      <td>0.3413</td>
+      <td>3.711750</td>
+      <td>5.407650</td>
+      <td>7.414753</td>
+      <td>15.0109</td>
+    </tr>
+    <tr>
+      <th>SVENY08</th>
+      <td>13570.0</td>
+      <td>5.816452</td>
+      <td>3.074481</td>
+      <td>0.4020</td>
+      <td>3.468525</td>
+      <td>5.739338</td>
+      <td>7.752375</td>
+      <td>14.9799</td>
+    </tr>
+    <tr>
+      <th>SVENY09</th>
+      <td>13570.0</td>
+      <td>5.900859</td>
+      <td>3.035535</td>
+      <td>0.4618</td>
+      <td>3.633750</td>
+      <td>5.830343</td>
+      <td>7.782710</td>
+      <td>14.9572</td>
+    </tr>
+    <tr>
+      <th>SVENY10</th>
+      <td>13570.0</td>
+      <td>5.975381</td>
+      <td>3.002294</td>
+      <td>0.5202</td>
+      <td>3.763250</td>
+      <td>5.897607</td>
+      <td>7.821714</td>
+      <td>14.9398</td>
+    </tr>
+    <tr>
+      <th>SVENY11</th>
+      <td>13509.0</td>
+      <td>6.040651</td>
+      <td>2.980776</td>
+      <td>0.5770</td>
+      <td>3.866200</td>
+      <td>5.919044</td>
+      <td>7.871100</td>
+      <td>14.9340</td>
+    </tr>
+    <tr>
+      <th>SVENY12</th>
+      <td>13509.0</td>
+      <td>6.098356</td>
+      <td>2.956955</td>
+      <td>0.6323</td>
+      <td>3.976200</td>
+      <td>5.960310</td>
+      <td>7.899800</td>
+      <td>14.9367</td>
+    </tr>
+    <tr>
+      <th>SVENY13</th>
+      <td>13509.0</td>
+      <td>6.148774</td>
+      <td>2.937018</td>
+      <td>0.6859</td>
+      <td>4.081200</td>
+      <td>6.003589</td>
+      <td>7.927400</td>
+      <td>14.9407</td>
+    </tr>
+    <tr>
+      <th>SVENY14</th>
+      <td>13509.0</td>
+      <td>6.192658</td>
+      <td>2.920487</td>
+      <td>0.7380</td>
+      <td>4.153200</td>
+      <td>6.041600</td>
+      <td>7.951300</td>
+      <td>14.9684</td>
+    </tr>
+    <tr>
+      <th>SVENY15</th>
+      <td>13509.0</td>
+      <td>6.230695</td>
+      <td>2.906949</td>
+      <td>0.7816</td>
+      <td>4.212100</td>
+      <td>6.071815</td>
+      <td>7.975000</td>
+      <td>15.0394</td>
+    </tr>
+    <tr>
+      <th>SVENY16</th>
+      <td>11111.0</td>
+      <td>5.849191</td>
+      <td>2.925250</td>
+      <td>0.8172</td>
+      <td>3.604550</td>
+      <td>5.243100</td>
+      <td>7.808672</td>
+      <td>15.1073</td>
+    </tr>
+    <tr>
+      <th>SVENY17</th>
+      <td>11111.0</td>
+      <td>5.881652</td>
+      <td>2.917378</td>
+      <td>0.8529</td>
+      <td>3.644250</td>
+      <td>5.285000</td>
+      <td>7.835550</td>
+      <td>15.1716</td>
+    </tr>
+    <tr>
+      <th>SVENY18</th>
+      <td>11111.0</td>
+      <td>5.909174</td>
+      <td>2.911281</td>
+      <td>0.8884</td>
+      <td>3.675650</td>
+      <td>5.320600</td>
+      <td>7.858474</td>
+      <td>15.2318</td>
+    </tr>
+    <tr>
+      <th>SVENY19</th>
+      <td>11111.0</td>
+      <td>5.932295</td>
+      <td>2.906792</td>
+      <td>0.9236</td>
+      <td>3.708150</td>
+      <td>5.343300</td>
+      <td>7.875748</td>
+      <td>15.2879</td>
+    </tr>
+    <tr>
+      <th>SVENY20</th>
+      <td>11111.0</td>
+      <td>5.951493</td>
+      <td>2.903773</td>
+      <td>0.9581</td>
+      <td>3.738700</td>
+      <td>5.362700</td>
+      <td>7.883839</td>
+      <td>15.3400</td>
+    </tr>
+    <tr>
+      <th>SVENY21</th>
+      <td>10016.0</td>
+      <td>5.284259</td>
+      <td>2.123643</td>
+      <td>0.9919</td>
+      <td>3.421075</td>
+      <td>5.005450</td>
+      <td>6.921916</td>
+      <td>10.4856</td>
+    </tr>
+    <tr>
+      <th>SVENY22</th>
+      <td>10016.0</td>
+      <td>5.293631</td>
+      <td>2.113586</td>
+      <td>1.0248</td>
+      <td>3.436550</td>
+      <td>5.007450</td>
+      <td>6.929820</td>
+      <td>10.5206</td>
+    </tr>
+    <tr>
+      <th>SVENY23</th>
+      <td>10016.0</td>
+      <td>5.299783</td>
+      <td>2.103548</td>
+      <td>1.0567</td>
+      <td>3.452975</td>
+      <td>5.003950</td>
+      <td>6.936682</td>
+      <td>10.5553</td>
+    </tr>
+    <tr>
+      <th>SVENY24</th>
+      <td>10016.0</td>
+      <td>5.303077</td>
+      <td>2.093561</td>
+      <td>1.0876</td>
+      <td>3.473700</td>
+      <td>4.997950</td>
+      <td>6.940729</td>
+      <td>10.5893</td>
+    </tr>
+    <tr>
+      <th>SVENY25</th>
+      <td>10016.0</td>
+      <td>5.303841</td>
+      <td>2.083659</td>
+      <td>1.1174</td>
+      <td>3.493600</td>
+      <td>4.990150</td>
+      <td>6.941298</td>
+      <td>10.6217</td>
+    </tr>
+    <tr>
+      <th>SVENY26</th>
+      <td>10016.0</td>
+      <td>5.302366</td>
+      <td>2.073879</td>
+      <td>1.1462</td>
+      <td>3.504050</td>
+      <td>4.977450</td>
+      <td>6.941569</td>
+      <td>10.6526</td>
+    </tr>
+    <tr>
+      <th>SVENY27</th>
+      <td>10016.0</td>
+      <td>5.298914</td>
+      <td>2.064261</td>
+      <td>1.1738</td>
+      <td>3.515700</td>
+      <td>4.965500</td>
+      <td>6.938391</td>
+      <td>10.6819</td>
+    </tr>
+    <tr>
+      <th>SVENY28</th>
+      <td>10016.0</td>
+      <td>5.293721</td>
+      <td>2.054842</td>
+      <td>1.2004</td>
+      <td>3.521050</td>
+      <td>4.947050</td>
+      <td>6.934286</td>
+      <td>10.7099</td>
+    </tr>
+    <tr>
+      <th>SVENY29</th>
+      <td>10016.0</td>
+      <td>5.286998</td>
+      <td>2.045660</td>
+      <td>1.2258</td>
+      <td>3.523825</td>
+      <td>4.932950</td>
+      <td>6.924952</td>
+      <td>10.7365</td>
+    </tr>
+    <tr>
+      <th>SVENY30</th>
+      <td>10016.0</td>
+      <td>5.278932</td>
+      <td>2.036751</td>
+      <td>1.2503</td>
+      <td>3.529150</td>
+      <td>4.917200</td>
+      <td>6.911414</td>
+      <td>10.7618</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="data-coverage">
+<h2>Data Coverage<a class="headerlink" href="#data-coverage" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Date range: </span><span class="si">{</span><span class="n">df_wide</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">df_wide</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of observations: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_wide</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing values per tenor:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_wide</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date range: 1961-06-14 00:00:00 to 2026-01-09 00:00:00
+Number of observations: 16106
+Missing values per tenor:
+unique_id
+SVENY01       0
+SVENY02       0
+SVENY03       0
+SVENY04       0
+SVENY05       0
+SVENY06       0
+SVENY07       0
+SVENY08    2536
+SVENY09    2536
+SVENY10    2536
+SVENY11    2597
+SVENY12    2597
+SVENY13    2597
+SVENY14    2597
+SVENY15    2597
+SVENY16    4995
+SVENY17    4995
+SVENY18    4995
+SVENY19    4995
+SVENY20    4995
+SVENY21    6090
+SVENY22    6090
+SVENY23    6090
+SVENY24    6090
+SVENY25    6090
+SVENY26    6090
+SVENY27    6090
+SVENY28    6090
+SVENY29    6090
+SVENY30    6090
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="current-yield-curve">
+<h2>Current Yield Curve<a class="headerlink" href="#current-yield-curve" title="Link to this heading">#</a></h2>
+<p>The most recent yield curve snapshot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the most recent yield curve</span>
+<span class="n">latest_date</span> <span class="o">=</span> <span class="n">df_wide</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">latest_curve</span> <span class="o">=</span> <span class="n">df_wide</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">latest_date</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Extract maturity in years from tenor names (e.g., SVENY01 -&gt; 1)</span>
+<span class="n">maturities</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">col</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;SVENY&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">latest_curve</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">maturities</span><span class="p">,</span> <span class="n">latest_curve</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;b-o&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Treasury Yield Curve as of </span><span class="si">{</span><span class="n">latest_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Maturity (Years)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Yield (%)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cb169ca1d77d1fc4999b7c673d0d1c0b2feae74ddfdebfa6e479ea7ddf42edd0.png" src="../../_images/cb169ca1d77d1fc4999b7c673d0d1c0b2feae74ddfdebfa6e479ea7ddf42edd0.png" />
+</div>
+</div>
+</section>
+<section id="historical-yield-curve-evolution">
+<h2>Historical Yield Curve Evolution<a class="headerlink" href="#historical-yield-curve-evolution" title="Link to this heading">#</a></h2>
+<p>Time series of selected tenors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select key tenors for visualization</span>
+<span class="n">key_tenors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SVENY01&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY02&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY05&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY10&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY30&#39;</span><span class="p">]</span>
+<span class="n">available_tenors</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">key_tenors</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">df_wide</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">tenor</span> <span class="ow">in</span> <span class="n">available_tenors</span><span class="p">:</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">tenor</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;SVENY&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Y&#39;</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_wide</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df_wide</span><span class="p">[</span><span class="n">tenor</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Historical Treasury Yields by Maturity&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Yield (%)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bcf656418e25398ad1c7560728c3af65f733e7f6af870e3294a4e562f854134e.png" src="../../_images/bcf656418e25398ad1c7560728c3af65f733e7f6af870e3294a4e562f854134e.png" />
+</div>
+</div>
+</section>
+<section id="yield-curve-slope-10y-2y-spread">
+<h2>Yield Curve Slope (10Y - 2Y Spread)<a class="headerlink" href="#yield-curve-slope-10y-2y-spread" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;SVENY10&#39;</span> <span class="ow">in</span> <span class="n">df_wide</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="s1">&#39;SVENY02&#39;</span> <span class="ow">in</span> <span class="n">df_wide</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">spread_10_2</span> <span class="o">=</span> <span class="n">df_wide</span><span class="p">[</span><span class="s1">&#39;SVENY10&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_wide</span><span class="p">[</span><span class="s1">&#39;SVENY02&#39;</span><span class="p">]</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spread_10_2</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">spread_10_2</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">spread_10_2</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">spread_10_2</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">spread_10_2</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inverted&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">spread_10_2</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">spread_10_2</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">spread_10_2</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Normal&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Treasury 10Y-2Y Spread (Yield Curve Slope)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Spread (%)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Spread Statistics:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Mean: </span><span class="si">{</span><span class="n">spread_10_2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Std: </span><span class="si">{</span><span class="n">spread_10_2</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Min: </span><span class="si">{</span><span class="n">spread_10_2</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Max: </span><span class="si">{</span><span class="n">spread_10_2</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Current: </span><span class="si">{</span><span class="n">spread_10_2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/abaf3ddee02609a553600bdb39efefbe41e88e8b0747bf8235e932aa3069a064.png" src="../../_images/abaf3ddee02609a553600bdb39efefbe41e88e8b0747bf8235e932aa3069a064.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Spread Statistics:
+  Mean: 0.93%
+  Std: 1.00%
+  Min: -2.51%
+  Max: 3.55%
+  Current: 0.72%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="correlation-matrix">
+<h2>Correlation Matrix<a class="headerlink" href="#correlation-matrix" title="Link to this heading">#</a></h2>
+<p>Correlation between yields at different maturities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select subset of tenors for correlation</span>
+<span class="n">corr_tenors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SVENY01&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY02&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY05&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY07&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY10&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY20&#39;</span><span class="p">,</span> <span class="s1">&#39;SVENY30&#39;</span><span class="p">]</span>
+<span class="n">available_corr</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">corr_tenors</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">df_wide</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df_wide</span><span class="p">[</span><span class="n">available_corr</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Rename for display</span>
+<span class="n">rename_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;SVENY&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Y&#39;</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">available_corr</span><span class="p">}</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">corr_matrix</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">rename_dict</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">rename_dict</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">corr_matrix</span><span class="p">,</span>
+    <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.3f&quot;</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span>
+    <span class="n">center</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+    <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Correlation Matrix: Treasury Yields Across Maturities&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c05d318c4fb359e42520e7d4af4e54b259e6144a114755b9e6d42074283ca669.png" src="../../_images/c05d318c4fb359e42520e7d4af4e54b259e6144a114755b9e6d42074283ca669.png" />
+</div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>This dataset provides daily zero-coupon Treasury yields estimated using the
+Gurkaynak, Sack, and Wright (2007) model. The yields cover maturities from 1 to 30 years
+and are widely used in fixed income research and practice.</p>
+<p>Key applications:</p>
+<ul class="simple">
+<li><p>Yield curve analysis and term structure modeling</p></li>
+<li><p>Fixed income derivatives pricing</p></li>
+<li><p>Monetary policy analysis</p></li>
+<li><p>Risk-free rate estimation</p></li>
+</ul>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                                </article>
+                                
+                                
+                                
+                                
+                                
+                                <footer class="prev-next-footer d-print-none">
+                                    
+<div class="prev-next-area">
+</div>
+                                </footer>
+                                
+                            </div>
+                            
+                            
+                            
+                            <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-source">Data Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-dataset">Load the Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics">Summary Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-coverage">Data Coverage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-yield-curve">Current Yield Curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-yield-curve-evolution">Historical Yield Curve Evolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yield-curve-slope-10y-2y-spread">Yield Curve Slope (10Y - 2Y Spread)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-matrix">Correlation Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/notebooks/fed_yield_curve/summary_fed_yield_curve_ipynb.ipynb">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+                            
+                            
+                        </div>
+                        <footer class="bd-footer-content">
+                            
+                        </footer>
+                        
+                    </main>
+                </div>
+            </div>
+            
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+            <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Jeremy Bejarano.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+            </footer>
+  </body>
+</html>

@@ -1,0 +1,1153 @@
+
+    <!DOCTYPE html>
+
+
+    <html
+        lang="en"  data-content_root="../../" >
+        
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ken French Data Library - Fama-French 25 Portfolios &#8212; ChartBook Catalog</title>
+        
+        
+        
+        <script data-cfasync="false">
+            document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+            document.documentElement.dataset.theme = localStorage.getItem("site") || "";
+        </script>
+        
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a417975a" />
+        
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=b9472d72"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/ken_french_data_library/summary_ken_french_ipynb';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/chartbook-custom.js?v=c152eb6c"></script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="docsearch:language" content="en" />
+        <meta name="docbuild:last-update" content="Jan 20, 2026, 6:57:29 PM" />   
+  </head>
+        
+        
+    
+        <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%"
+            data-default-mode="">
+    
+            
+            
+            <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+            
+            <div id="pst-scroll-pixel-helper"></div>
+            
+            <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+                <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    
+            
+            <input type="checkbox" class="sidebar-toggle" id="pst-primary-sidebar-checkbox" />
+            <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+            
+            <input type="checkbox" class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" />
+            <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+            
+            <div class="search-button__wrapper">
+                <div class="search-button__overlay"></div>
+                <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+            </div>
+    
+            <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+    
+            
+            <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="ChartBook Catalog - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="ChartBook Catalog - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../charts.html">
+    Charts 📈
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../dataframes.html">
+    Dataframes 📊
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../pipelines.html">
+    Pipelines 🔌
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../diagnostics.html">
+    Diagnostics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+            </header>
+            
+    
+            <div class="bd-container">
+                <div class="bd-container__inner bd-page-width">
+                    
+                    
+                    
+                    
+                    
+                    <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+                        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../charts.html">
+    Charts 📈
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../dataframes.html">
+    Dataframes 📊
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../pipelines.html">
+    Pipelines 🔌
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../diagnostics.html">
+    Diagnostics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+                    </div>
+                    
+                    <main id="main-content" class="bd-main" role="main">
+                        
+                        
+                        <div class="bd-content">
+                            <div class="bd-article-container">
+                                
+                                <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Ken French...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+
+                                </div>
+                                
+                                
+                                
+                                
+                                
+<div id="searchbox"></div>
+                                <article class="bd-article">
+                                     <section class="tex2jax_ignore mathjax_ignore" id="ken-french-data-library-fama-french-25-portfolios">
+<h1>Ken French Data Library - Fama-French 25 Portfolios<a class="headerlink" href="#ken-french-data-library-fama-french-25-portfolios" title="Link to this heading">#</a></h1>
+<p>This notebook provides summary statistics and visualizations for the Fama-French 25 portfolios
+sorted by Size and various characteristics (Book-to-Market, Operating Profitability, Investment).</p>
+<section id="data-source">
+<h2>Data Source<a class="headerlink" href="#data-source" title="Link to this heading">#</a></h2>
+<p>Data is publicly available from <a class="reference external" href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">Ken French’s Data Library</a>.</p>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
+<p>Fama, Eugene F., and Kenneth R. French. “The cross-section of expected stock returns.”
+The Journal of Finance 47.2 (1992): 427-465.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">import</span> <span class="nn">chartbook</span>
+
+<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">chartbook</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_project_root</span><span class="p">()</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;_data&quot;</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-the-datasets">
+<h2>Load the Datasets<a class="headerlink" href="#load-the-datasets" title="Link to this heading">#</a></h2>
+<p>We have three daily portfolio datasets:</p>
+<ol class="arabic simple">
+<li><p><strong>Size x Book-to-Market</strong>: 25 portfolios sorted by size and B/M ratio</p></li>
+<li><p><strong>Size x Operating Profitability</strong>: 25 portfolios sorted by size and OP</p></li>
+<li><p><strong>Size x Investment</strong>: 25 portfolios sorted by size and investment</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Size x Book-to-Market portfolios</span>
+<span class="n">size_bm_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;ftsfr_french_portfolios_25_daily_size_and_bm.parquet&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Size x Book-to-Market shape: </span><span class="si">{</span><span class="n">size_bm_df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">size_bm_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Size x Book-to-Market shape: (653225, 3)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>unique_id</th>
+      <th>ds</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SMALL LoBM</td>
+      <td>1926-07-01</td>
+      <td>-0.0046</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SMALL LoBM</td>
+      <td>1926-07-02</td>
+      <td>0.0057</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SMALL LoBM</td>
+      <td>1926-07-06</td>
+      <td>0.0038</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SMALL LoBM</td>
+      <td>1926-07-07</td>
+      <td>-0.0081</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SMALL LoBM</td>
+      <td>1926-07-08</td>
+      <td>0.0056</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Size x Operating Profitability portfolios</span>
+<span class="n">size_op_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;ftsfr_french_portfolios_25_daily_size_and_op.parquet&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Size x Operating Profitability shape: </span><span class="si">{</span><span class="n">size_op_df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">size_op_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Size x Operating Profitability shape: (392725, 3)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>unique_id</th>
+      <th>ds</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SMALL LoOP</td>
+      <td>1963-07-01</td>
+      <td>-0.0070</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SMALL LoOP</td>
+      <td>1963-07-02</td>
+      <td>0.0033</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SMALL LoOP</td>
+      <td>1963-07-03</td>
+      <td>0.0067</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SMALL LoOP</td>
+      <td>1963-07-05</td>
+      <td>0.0052</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SMALL LoOP</td>
+      <td>1963-07-08</td>
+      <td>-0.0031</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Size x Investment portfolios</span>
+<span class="n">size_inv_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;ftsfr_french_portfolios_25_daily_size_and_inv.parquet&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Size x Investment shape: </span><span class="si">{</span><span class="n">size_inv_df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">size_inv_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Size x Investment shape: (392725, 3)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>unique_id</th>
+      <th>ds</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SMALL LoINV</td>
+      <td>1963-07-01</td>
+      <td>-0.0067</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SMALL LoINV</td>
+      <td>1963-07-02</td>
+      <td>0.0039</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SMALL LoINV</td>
+      <td>1963-07-03</td>
+      <td>0.0034</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SMALL LoINV</td>
+      <td>1963-07-05</td>
+      <td>0.0072</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SMALL LoINV</td>
+      <td>1963-07-08</td>
+      <td>-0.0021</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="summary-statistics-size-x-book-to-market-portfolios">
+<h2>Summary Statistics - Size x Book-to-Market Portfolios<a class="headerlink" href="#summary-statistics-size-x-book-to-market-portfolios" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pivot to wide format</span>
+<span class="n">size_bm_wide</span> <span class="o">=</span> <span class="n">size_bm_df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;ds&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;unique_id&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Calculate summary statistics (annualized)</span>
+<span class="n">summary_stats</span> <span class="o">=</span> <span class="n">size_bm_wide</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+<span class="n">summary_stats</span><span class="p">[</span><span class="s1">&#39;annualized_mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">summary_stats</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">252</span>
+<span class="n">summary_stats</span><span class="p">[</span><span class="s1">&#39;annualized_std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">summary_stats</span><span class="p">[</span><span class="s1">&#39;std&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">252</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">summary_stats</span><span class="p">[</span><span class="s1">&#39;sharpe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">summary_stats</span><span class="p">[</span><span class="s1">&#39;annualized_mean&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">summary_stats</span><span class="p">[</span><span class="s1">&#39;annualized_std&#39;</span><span class="p">]</span>
+<span class="n">summary_stats</span><span class="p">[[</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;annualized_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;annualized_std&#39;</span><span class="p">,</span> <span class="s1">&#39;sharpe&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>annualized_mean</th>
+      <th>annualized_std</th>
+      <th>sharpe</th>
+      <th>min</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>unique_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>BIG HiBM</th>
+      <td>26129.0</td>
+      <td>0.142705</td>
+      <td>0.280692</td>
+      <td>0.508405</td>
+      <td>-0.1815</td>
+      <td>0.2397</td>
+    </tr>
+    <tr>
+      <th>BIG LoBM</th>
+      <td>26129.0</td>
+      <td>0.110707</td>
+      <td>0.182019</td>
+      <td>0.608216</td>
+      <td>-0.1845</td>
+      <td>0.1359</td>
+    </tr>
+    <tr>
+      <th>ME1 BM2</th>
+      <td>26129.0</td>
+      <td>0.107540</td>
+      <td>0.309830</td>
+      <td>0.347092</td>
+      <td>-0.2693</td>
+      <td>0.4579</td>
+    </tr>
+    <tr>
+      <th>ME1 BM3</th>
+      <td>26129.0</td>
+      <td>0.130829</td>
+      <td>0.238188</td>
+      <td>0.549267</td>
+      <td>-0.1980</td>
+      <td>0.3711</td>
+    </tr>
+    <tr>
+      <th>ME1 BM4</th>
+      <td>26129.0</td>
+      <td>0.147271</td>
+      <td>0.214402</td>
+      <td>0.686890</td>
+      <td>-0.1459</td>
+      <td>0.2451</td>
+    </tr>
+    <tr>
+      <th>ME2 BM1</th>
+      <td>26129.0</td>
+      <td>0.098051</td>
+      <td>0.238048</td>
+      <td>0.411897</td>
+      <td>-0.1546</td>
+      <td>0.2821</td>
+    </tr>
+    <tr>
+      <th>ME2 BM2</th>
+      <td>26129.0</td>
+      <td>0.128415</td>
+      <td>0.202870</td>
+      <td>0.632992</td>
+      <td>-0.1344</td>
+      <td>0.3101</td>
+    </tr>
+    <tr>
+      <th>ME2 BM3</th>
+      <td>26129.0</td>
+      <td>0.133210</td>
+      <td>0.196182</td>
+      <td>0.679012</td>
+      <td>-0.1471</td>
+      <td>0.1903</td>
+    </tr>
+    <tr>
+      <th>ME2 BM4</th>
+      <td>26129.0</td>
+      <td>0.139985</td>
+      <td>0.200609</td>
+      <td>0.697803</td>
+      <td>-0.1544</td>
+      <td>0.2991</td>
+    </tr>
+    <tr>
+      <th>ME2 BM5</th>
+      <td>26129.0</td>
+      <td>0.160784</td>
+      <td>0.235297</td>
+      <td>0.683323</td>
+      <td>-0.1571</td>
+      <td>0.2701</td>
+    </tr>
+    <tr>
+      <th>ME3 BM1</th>
+      <td>26129.0</td>
+      <td>0.105086</td>
+      <td>0.207775</td>
+      <td>0.505768</td>
+      <td>-0.1450</td>
+      <td>0.1375</td>
+    </tr>
+    <tr>
+      <th>ME3 BM2</th>
+      <td>26129.0</td>
+      <td>0.127627</td>
+      <td>0.185098</td>
+      <td>0.689509</td>
+      <td>-0.1404</td>
+      <td>0.1564</td>
+    </tr>
+    <tr>
+      <th>ME3 BM3</th>
+      <td>26129.0</td>
+      <td>0.129920</td>
+      <td>0.185752</td>
+      <td>0.699430</td>
+      <td>-0.1942</td>
+      <td>0.2342</td>
+    </tr>
+    <tr>
+      <th>ME3 BM4</th>
+      <td>26129.0</td>
+      <td>0.138533</td>
+      <td>0.193861</td>
+      <td>0.714601</td>
+      <td>-0.1521</td>
+      <td>0.2339</td>
+    </tr>
+    <tr>
+      <th>ME3 BM5</th>
+      <td>26129.0</td>
+      <td>0.149492</td>
+      <td>0.243500</td>
+      <td>0.613931</td>
+      <td>-0.1912</td>
+      <td>0.3012</td>
+    </tr>
+    <tr>
+      <th>ME4 BM1</th>
+      <td>26129.0</td>
+      <td>0.110808</td>
+      <td>0.190592</td>
+      <td>0.581389</td>
+      <td>-0.1911</td>
+      <td>0.1407</td>
+    </tr>
+    <tr>
+      <th>ME4 BM2</th>
+      <td>26129.0</td>
+      <td>0.115248</td>
+      <td>0.177618</td>
+      <td>0.648855</td>
+      <td>-0.1627</td>
+      <td>0.2277</td>
+    </tr>
+    <tr>
+      <th>ME4 BM3</th>
+      <td>26129.0</td>
+      <td>0.122239</td>
+      <td>0.183263</td>
+      <td>0.667012</td>
+      <td>-0.1573</td>
+      <td>0.2560</td>
+    </tr>
+    <tr>
+      <th>ME4 BM4</th>
+      <td>26129.0</td>
+      <td>0.136414</td>
+      <td>0.200849</td>
+      <td>0.679188</td>
+      <td>-0.1384</td>
+      <td>0.2143</td>
+    </tr>
+    <tr>
+      <th>ME4 BM5</th>
+      <td>26129.0</td>
+      <td>0.142776</td>
+      <td>0.260568</td>
+      <td>0.547941</td>
+      <td>-0.1755</td>
+      <td>0.3364</td>
+    </tr>
+    <tr>
+      <th>ME5 BM2</th>
+      <td>26129.0</td>
+      <td>0.105196</td>
+      <td>0.173130</td>
+      <td>0.607614</td>
+      <td>-0.2054</td>
+      <td>0.1678</td>
+    </tr>
+    <tr>
+      <th>ME5 BM3</th>
+      <td>26129.0</td>
+      <td>0.111699</td>
+      <td>0.182631</td>
+      <td>0.611613</td>
+      <td>-0.1894</td>
+      <td>0.2078</td>
+    </tr>
+    <tr>
+      <th>ME5 BM4</th>
+      <td>26129.0</td>
+      <td>0.106993</td>
+      <td>0.214659</td>
+      <td>0.498431</td>
+      <td>-0.2042</td>
+      <td>0.2364</td>
+    </tr>
+    <tr>
+      <th>SMALL HiBM</th>
+      <td>26129.0</td>
+      <td>0.164619</td>
+      <td>0.212903</td>
+      <td>0.773214</td>
+      <td>-0.1868</td>
+      <td>0.2889</td>
+    </tr>
+    <tr>
+      <th>SMALL LoBM</th>
+      <td>26129.0</td>
+      <td>0.118255</td>
+      <td>0.481118</td>
+      <td>0.245791</td>
+      <td>-0.9999</td>
+      <td>1.2794</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="data-coverage">
+<h2>Data Coverage<a class="headerlink" href="#data-coverage" title="Link to this heading">#</a></h2>
+<p>Let’s examine the date range and data availability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data coverage</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size x Book-to-Market Portfolios:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Date range: </span><span class="si">{</span><span class="n">size_bm_wide</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">size_bm_wide</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Number of trading days: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">size_bm_wide</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Number of portfolios: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">size_bm_wide</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Size x Book-to-Market Portfolios:
+  Date range: 1926-07-01 00:00:00 to 2025-11-28 00:00:00
+  Number of trading days: 26129
+  Number of portfolios: 25
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cumulative-returns-size-x-book-to-market-portfolios">
+<h2>Cumulative Returns - Size x Book-to-Market Portfolios<a class="headerlink" href="#cumulative-returns-size-x-book-to-market-portfolios" title="Link to this heading">#</a></h2>
+<p>Let’s visualize the cumulative returns for a selection of portfolios.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select corner portfolios for visualization</span>
+<span class="n">corner_portfolios</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SMALL LoBM&#39;</span><span class="p">,</span> <span class="s1">&#39;SMALL HiBM&#39;</span><span class="p">,</span> <span class="s1">&#39;BIG LoBM&#39;</span><span class="p">,</span> <span class="s1">&#39;BIG HiBM&#39;</span><span class="p">]</span>
+<span class="n">available_corners</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">corner_portfolios</span> <span class="k">if</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">size_bm_wide</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">available_corners</span><span class="p">:</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">portfolio</span> <span class="ow">in</span> <span class="n">available_corners</span><span class="p">:</span>
+        <span class="n">cumret</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">size_bm_wide</span><span class="p">[</span><span class="n">portfolio</span><span class="p">])</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cumret</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">cumret</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">portfolio</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cumulative Returns: Corner Portfolios (Size x B/M)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Cumulative Return (Starting at 1)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Corner portfolios not found. Available portfolios:&quot;</span><span class="p">,</span> <span class="n">size_bm_wide</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8a71f456238d9bbeec97d1395acbb8183e1f723f3f044a844dd0e0170e3ff14f.png" src="../../_images/8a71f456238d9bbeec97d1395acbb8183e1f723f3f044a844dd0e0170e3ff14f.png" />
+</div>
+</div>
+</section>
+<section id="correlation-matrix-size-x-book-to-market-portfolios">
+<h2>Correlation Matrix - Size x Book-to-Market Portfolios<a class="headerlink" href="#correlation-matrix-size-x-book-to-market-portfolios" title="Link to this heading">#</a></h2>
+<p>Showing correlation between a subset of portfolios.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate correlation matrix for subset</span>
+<span class="n">n_portfolios</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">size_bm_wide</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+<span class="n">subset_cols</span> <span class="o">=</span> <span class="n">size_bm_wide</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="n">n_portfolios</span><span class="p">]</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">size_bm_wide</span><span class="p">[</span><span class="n">subset_cols</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Create heatmap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">corr_matrix</span><span class="p">,</span>
+    <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span>
+    <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">},</span>
+    <span class="n">annot_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Correlation Matrix: Fama-French Portfolios (Size x B/M)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f19b075e5ceb48c740a48de2b9695d27c9160c91f4f3178cce576dcdedc873d5.png" src="../../_images/f19b075e5ceb48c740a48de2b9695d27c9160c91f4f3178cce576dcdedc873d5.png" />
+</div>
+</div>
+</section>
+<section id="distribution-of-daily-returns">
+<h2>Distribution of Daily Returns<a class="headerlink" href="#distribution-of-daily-returns" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram of daily returns for a few portfolios</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">portfolios_to_plot</span> <span class="o">=</span> <span class="n">size_bm_wide</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">portfolio</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">portfolios_to_plot</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">size_bm_wide</span><span class="p">[</span><span class="n">portfolio</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">mean_ret</span> <span class="o">=</span> <span class="n">size_bm_wide</span><span class="p">[</span><span class="n">portfolio</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mean_ret</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Mean: </span><span class="si">{</span><span class="n">mean_ret</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">portfolio</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Daily Return&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Distribution of Daily Returns&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c9d9dd8e45d51452256e32f7ef4b2f277d420f21150760ed369bee41ca514d63.png" src="../../_images/c9d9dd8e45d51452256e32f7ef4b2f277d420f21150760ed369bee41ca514d63.png" />
+</div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>This dataset provides daily returns for the Fama-French 25 portfolios formed on various
+characteristics. These portfolios are widely used as test assets in empirical asset pricing
+research to evaluate factor models and understand the cross-section of expected returns.</p>
+<p>The portfolios exhibit significant variation in average returns across size and value dimensions,
+consistent with the well-documented size and value premiums in equity markets.</p>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                                </article>
+                                
+                                
+                                
+                                
+                                
+                                <footer class="prev-next-footer d-print-none">
+                                    
+<div class="prev-next-area">
+</div>
+                                </footer>
+                                
+                            </div>
+                            
+                            
+                            
+                            <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-source">Data Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-datasets">Load the Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics-size-x-book-to-market-portfolios">Summary Statistics - Size x Book-to-Market Portfolios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-coverage">Data Coverage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-returns-size-x-book-to-market-portfolios">Cumulative Returns - Size x Book-to-Market Portfolios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-matrix-size-x-book-to-market-portfolios">Correlation Matrix - Size x Book-to-Market Portfolios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-daily-returns">Distribution of Daily Returns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/notebooks/ken_french_data_library/summary_ken_french_ipynb.ipynb">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+                            
+                            
+                        </div>
+                        <footer class="bd-footer-content">
+                            
+                        </footer>
+                        
+                    </main>
+                </div>
+            </div>
+            
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+            <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Jeremy Bejarano.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+            </footer>
+  </body>
+</html>
