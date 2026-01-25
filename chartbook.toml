@@ -56,8 +56,8 @@ path_to_pipeline = "../nyu_call_report"
 [pipelines.options]
 path_to_pipeline = "../options"
 
-[pipelines.sovereign_bonds]
-path_to_pipeline = "../sovereign_bonds"
+# [pipelines.sovereign_bonds]
+# path_to_pipeline = "../sovereign_bonds"
 
 [pipelines.us_treasury_returns]
 path_to_pipeline = "../us_treasury_returns"

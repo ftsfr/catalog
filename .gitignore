@@ -209,3 +209,4 @@ __marimo__/
 docs/
 
 .DS_Store
+.doit.db.db
