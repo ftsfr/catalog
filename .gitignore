@@ -208,5 +208,10 @@ __marimo__/
 
 docs/
 
+# Chartbook build artifacts
+docs.zip
+
 .DS_Store
 .doit.db.db
+.doit.db
+.doit.db.*
